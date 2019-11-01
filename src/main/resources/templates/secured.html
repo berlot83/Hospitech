@@ -1,5 +1,89 @@
-<html>
-<head></head>
-<body>Secured</body>
 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="default :: header"></div>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+
+	<nav th:replace="default :: navbar"></nav>
+
+	<aside th:replace="default :: sidebar"></aside>
+
+	<!-- Main content -->
+	<section class="wrapper">
+		<div class="content-wrapper">
+
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="card card-danger">
+						<div class="card-header">
+							<h3 class="card-title">Identificador nuevo usuario</h3>
+						
+						</div>
+
+						<h5 class="card-title">Ingrese los datos que le fueron otrogados al darse de alta en la clínica asociada a nuestros servicios.</h5>
+						<div class="card-body">
+							<div class="row">
+								<!-- Nombre y Apellido -->
+								<div class="col-12 col-sm-5">
+									<div class="form-group">
+										<input type="text" class="form-control"
+											data-inputmask="'mask': 'Ingrese el código'" data-mask>
+									</div>
+									<!-- /.form-group -->
+								</div>
+
+<!-- 								/.col -->
+<!-- 								<div class="col-12 col-sm-3"> -->
+<!-- 									<div class="form-group"> -->
+<!-- 										<div class="select2-purple"> -->
+<!-- 											<input type="text" class="form-control" -->
+<!-- 												data-inputmask="'mask': 'Apellidos'" data-mask> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+
+<!-- 								<div class="col-12 col-sm-3"> -->
+<!-- 									<div class="form-group"> -->
+<!-- 										<input type="text" class="form-control" -->
+<!-- 											data-inputmask="'mask': 'Nombre completo'" data-mask> -->
+<!-- 									</div> -->
+<!-- 									/.form-group -->
+<!-- 								</div> -->
+
+
+<!-- 								<div class="col-12 col-sm-3"> -->
+<!-- 									<div class="form-group"> -->
+<!-- 										<input type="text" class="form-control" -->
+<!-- 											data-inputmask="'mask': 'Nombre completo'" data-mask> -->
+<!-- 									</div> -->
+<!-- 									/.form-group -->
+<!-- 								</div> -->
+							</div>
+							
+							<div class="form-group">
+							<h5>Registro: OSDE</h5>
+							<h5>Nombre y Apellido: Marcelo Morelos</h5>
+							<h5>Identificador nuevo usuario</h5>
+							<button class="btn btn-md btn-primary">Registrarse</button>
+							</div>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="main-footer">
+		<div th:replace="default :: footer"></div>
+	</footer>
+
+</body>
 </html>
+
+

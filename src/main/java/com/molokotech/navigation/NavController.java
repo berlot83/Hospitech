@@ -35,4 +35,9 @@ public class NavController {
 	public String illnesses(){
 		return "illnesses";
 	}
+	
+	@GetMapping("/secured")
+	public String secured(){
+		return "secured";
+	}
 }
