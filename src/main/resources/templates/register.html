@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="default :: header"></div>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+  <nav th:replace="default :: navbar">
+  </nav>
+
+  <aside th:replace="default :: sidebar">
+  </aside>
+    <div class="content-wrapper">
+      <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-6">
+
+            <div class="card card-danger">
+              <div class="card-header">
+                <h3 class="card-title">Registro de datos personales</h3>
+              </div>
+              <div class="card-body">
+
+
+<!-- Nombre y Apellido -->
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label>Nombre:</label>
+                  <input type="text" class="form-control" data-inputmask="'mask': 'Nombre completo'" data-mask>
+                </div>
+                <!-- /.form-group -->
+              </div>
+
+              <!-- /.col -->
+              <div class="col-12 col-sm-6">
+                <div class="form-group">
+                  <label>Apellidos:</label>
+                  <div class="select2-purple">
+                    <input type="text" class="form-control" data-inputmask="'mask': 'Apellidos'" data-mask>
+                  </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.col -->
+            </div>
+<!-- Nombre y Apellido -->
+
+<!-- Direción y país -->
+	          <div class="row">
+	              <div class="col-12 col-sm-6">
+	                <div class="form-group">
+	                  <label>Dirección:</label>
+	                  <input type="text" class="form-control" data-inputmask="'mask': 'Dirección'" data-mask>
+	           	     </div>
+	                <!-- /.form-group -->
+	              </div>
+              
+	             <div class="col-12 col-sm-4">
+	               <div class="form-group">
+	                 <label>Número:</label>
+	                 <input type="text" class="form-control" data-inputmask="'mask': 'Altura'" data-mask>
+	               </div>
+	               <!-- /.form-group -->
+	             </div>
+              
+	              <div class="col-12 col-sm-2">
+	                <div class="form-group">
+	                  <label>Piso:</label>
+	                  <input type="text" class="form-control" data-inputmask="'mask': 'Piso'" data-mask>
+	                </div>
+	                <!-- /.form-group -->
+	              </div>
+            </div>
+<!-- Direción y país -->
+
+<!-- Sexo y Edad nacimiento -->
+            <div class="row">
+            
+              <!-- /.col -->
+              <div class="col-12 col-sm-4">
+                <div class="form-group">
+                  <label>País:</label>
+                  <div class="select2-purple">
+                  <select class="form-control select2" style="width: 100%;">
+                    <option selected="selected">Argentina</option>
+                    <option>Otro</option>
+                  </select>
+                  </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.col -->
+            
+              <div class="col-12 col-sm-4">
+                <div class="form-group">
+                  <label>Provincias:</label>
+                  <div class="select2-purple">
+                  <select class="form-control select2" id="provincias" style="width: 100%;">
+                  </select>
+                  </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+
+              <!-- /.col -->
+              <div class="col-12 col-sm-4">
+                <div class="form-group">
+                  <label>Localidad</label>
+                  <div class="select2-purple">
+				  <input type="text" class="form-control" data-inputmask="'mask': 'Localidad'" data-mask>
+                  </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.col -->
+            </div>
+<!-- Sexo y Edad nacimiento -->
+
+<!-- Email -->
+            <div class="row">
+              <div class="col-12 col-sm-8">
+                  <label>Email:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-at"></i></span>
+                    </div>
+                  <input type="email" class="form-control" data-inputmask="'mask': 'Email'" data-mask>
+                </div>
+                <!-- /.form-group -->
+              </div>
+            
+            <!-- /.col -->
+            <div class="col-12 col-sm-4">
+              <div class="form-group">
+                <label>Género:</label>
+                <div class="select2-purple">
+		  			<select class="form-control select2" id="provincias" style="width: 100%;">
+                  	    <option value="M" selected="selected">Masculino</option>
+                    	<option value="F">Femenino</option>
+                    	<option value="T">Transgénero</option>
+                    	<option value="O">Otro</option>
+                  	</select>
+		  		</div>
+              </div>
+              <!-- /.form-group -->
+            </div>
+            <!-- /.col -->
+            </div>
+<!-- Email -->
+
+
+                <!-- Date dd/mm/yyyy -->
+                <div class="form-group">
+                  <label>Fecha de nacimiento:</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+
+                  <div class="row">
+	                <div class="col-12 col-sm-6">
+                <!-- phone mask -->
+
+                <div class="form-group">
+                  <label>Teléfono móvil</label>
+		                  <div class="input-group">
+		                    <div class="input-group-prepend">
+		                      <span class="input-group-text"><i class="fas fa-phone"></i></span>
+		                    </div>
+		                    <input type="text" class="form-control" data-inputmask='"mask": "(999) 9999-9999"' data-mask>
+		                  </div>
+		                  <!-- /.input group -->
+		                </div>
+		                <!-- /.form group -->
+		                </div>
+		
+					<div class="col-12 col-sm-6">
+		                <!-- phone mask -->
+		                <div class="form-group">
+		                  <label>Teléfono fijo:</label>
+		
+		                  <div class="input-group">
+		                    <div class="input-group-prepend">
+		                      <span class="input-group-text"><i class="fas fa-phone"></i></span>
+		                    </div>
+		                    <input type="text" class="form-control"
+		                           data-inputmask='"mask": "(99) 9999-9999"' data-mask>
+		                  </div>
+		                  <!-- /.input group -->
+		                </div>
+		                <!-- /.form group -->
+	                </div>
+                </div>
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col (left) -->
+          
+          <div class="col-md-6">
+            <!-- User -->
+              <div class="card-body">
+                <!-- Minimal style -->
+                <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Registro de Usuario</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Usuario</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Elija un usuario">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Repita la Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Acepto las políticas y condiciones de la empresa.</label>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+              </form>
+            </div>
+                
+              </div>
+              <!-- /.card-body -->
+            <!-- /.card -->
+
+            <!-- /.card -->
+          </div>
+          <!-- /.col (right) -->
+        </div>
+      </div>
+    </section>
+   </div>
+</div>
+
+<footer  class="main-footer">
+  	<div th:replace="default :: footerlibs"></div>
+  	<!-- InputMask -->
+	<script src="../../plugins/moment/moment.min.js"></script>
+	<script src="../../plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+	
+	<script type="text/javascript">
+	  $(document).ready(function(){
+		  $(":input").inputmask(); 
+	  
+		$.ajax({
+	    	type : "GET",
+	    	url: "https://apis.datos.gob.ar/georef/api/provincias?campos=nombre",
+		}).done(function(data) {
+			for (var i = 0; i < data.provincias.length; i++) {
+				$('#provincias').append('<option value="'+ data.provincias[i].nombre +'">' + data.provincias[i].nombre + '</option>');
+				console.log(data.provincias[i].nombre);
+			}
+		})
+	  });
+  	</script>
+</footer>
+
+</body>
+</html>
+
+
