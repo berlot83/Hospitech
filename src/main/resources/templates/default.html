@@ -34,46 +34,6 @@ Axel A. Berlot 30-10-2019
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <script type="text/javascript" src="/webjars/js-cookie/js.cookie.js"></script>
-
-<script type="text/javascript">
-$.ajaxSetup({
-	beforeSend : function(xhr, settings) {
-	  if (settings.type == 'POST' || settings.type == 'PUT'
-	      || settings.type == 'DELETE') {
-	    if (!(/^http:.*/.test(settings.url) || /^https:.*/
-	        .test(settings.url))) {
-	      // Only send the token to relative URLs i.e. locally.
-	      xhr.setRequestHeader("X-XSRF-TOKEN",
-	          Cookies.get('XSRF-TOKEN'));
-	    }
-	  }
-	}
-	});
-</script>
-
-<script>
-	window.fbAsyncInit = function() {
-		FB.init({
-			appId : '{your-app-id}',
-			cookie : true,
-			xfbml : true,
-			version : '{api-version}'
-		});
-		FB.AppEvents.logPageView();
-	};
-
-	(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) {
-			return;
-		}
-		js = d.createElement(s);
-		js.id = id;
-		js.src = "https://connect.facebook.net/en_US/sdk.js";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-</script>
 </div>
 
 </head>
@@ -195,7 +155,10 @@ $.ajaxSetup({
         </div>
       </li>
       <li class="nav-link">
-      <i class="fas fa-sign-out-alt nav-icon"></i> <a onclick="logout()" href="#" class="nav-item">Logout</a>
+<!--       <i class="fas fa-sign-out-alt nav-icon"></i> <a onclick="logout()" href="#" class="nav-item">Logout</a> -->
+      <i class="fas fa-sign-out-alt nav-icon"></i> <button onclick="logout()" class="nav-item">Logout</button>
+
+
       </li>
     </ul>
   </nav>
@@ -212,33 +175,13 @@ $.ajaxSetup({
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-        
 		<div class="container unauthenticated">
-			With Facebook: <a href="/login">click here</a>
+			<span class="text-light"> With Facebook: <a href="/login">click here</a></span>
 		</div>
 
 		<div class="container authenticated text-muted" style="display: none">
-			Hola <span id="user"></span>
+			Hola <span id="user" class="text-light"></span>
 		</div>
-<!-- 				<button onclick="logout()" class="btn btn-sm btn-primary">Logout</button> -->
-
-		<script type="text/javascript">
-			$.get("/user", function(data) {
-				$("#user").html(data.userAuthentication.details.name);
-				$(".unauthenticated").hide()
-				$(".authenticated").show()
-			});
-		</script>
-		<script type="text/javascript">
-			function logout() {
-				$.post("/logout", function() {
-					$("#user").html('');
-					$(".unauthenticated").show();
-					$(".authenticated").hide();
-				})
-				return true;
-			}
-		</script>
         </div>
       </div>
 
@@ -391,6 +334,23 @@ $.ajaxSetup({
 <script src="../dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+  <script type="text/javascript" src="/webjars/js-cookie/js.cookie.js"></script>
+<!-- OAuth2 calls -->
+<script src="../js/oauth2-calls.js"></script>
+<script type="text/javascript">
+
+function logout() {
+	$.post("/logout", function() {
+		
+		$("#user").html('');
+		$(".unauthenticated").show();
+		$(".authenticated").hide();
+	
+	})
+	return true;
+}
+</script>
+
 </div>
 </footer>
 
