@@ -17,10 +17,12 @@ public class ClinicalCare {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@ManyToOne
 	@JoinColumn(name = "person_id")
 	private Person person;
 	private LocalDateTime date;
+	
     @ManyToOne
     @JoinColumn(name = "professional_id", nullable=false)
     private Professional professional;

@@ -29,6 +29,7 @@ public class Person {
 	private String city;
 	private String gender;
 	private String birthday;
+	
 	@OneToMany(targetEntity = ClinicalCare.class, mappedBy = "person", fetch = FetchType.LAZY)
 	private List<ClinicalCare> clinicalCares;
 	
